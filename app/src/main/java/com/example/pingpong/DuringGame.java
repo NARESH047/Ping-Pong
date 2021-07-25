@@ -89,16 +89,16 @@ public class DuringGame extends View {
         gameType = sharedPreferences.getInt("gameType", 0);
         audioState = sharedPreferences.getBoolean("audioState", true);
         if(gameType == 0) {
+            xVel = dWidth/80;
+            yVel = dHeight/200;
+        }
+        else if(gameType == 1) {
             xVel = dWidth/60;
             yVel = dHeight/150;
         }
-        else if(gameType == 1) {
+        else {
             xVel = dWidth/30;
             yVel = dHeight/75;
-        }
-        else {
-            xVel = dWidth/15;
-            yVel = dHeight/45;
         }
     }
 

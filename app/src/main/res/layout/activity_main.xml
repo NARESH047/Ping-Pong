@@ -73,7 +73,8 @@ android:background="@drawable/app_background_stars">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_weight="1">
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,12 +121,11 @@ android:background="@drawable/app_background_stars">
 
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="0dp"
+    android:layout_height="254dp"
     android:layout_gravity="center"
     app:cardElevation="10dp"
     app:cardBackgroundColor="@color/white"
     app:cardMaxElevation="12dp"
-    android:layout_weight="1"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
     >

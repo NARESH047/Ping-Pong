@@ -116,12 +116,11 @@ android:background="@drawable/app_background_stars">
 
     <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="0dp"
+    android:layout_height="254dp"
     android:layout_gravity="center"
     app:cardElevation="10dp"
     app:cardBackgroundColor="@color/white"
     app:cardMaxElevation="12dp"
-    android:layout_weight="2"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
     >

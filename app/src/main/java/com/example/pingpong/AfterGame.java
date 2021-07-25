@@ -15,8 +15,6 @@ public class AfterGame extends AppCompatActivity {
     TextView currentScore;
     TextView highestScore;
     SharedPreferences sharedPreferences;
-    ImageView highest_image;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -43,8 +43,7 @@ public class DuringGame extends View {
     SharedPreferences sharedPreferences;
     int gameType;
     Boolean audioState;
-    Timer timer1 = new Timer();
-    Timer timer2 = new Timer();
+    Timer timer = new Timer();
 
     public DuringGame(Context context) {
         super(context);
@@ -55,12 +54,6 @@ public class DuringGame extends View {
         borderPaint = new Paint();
         ballOrg = BitmapFactory.decodeResource(getResources(), R.drawable.ball);
         batOrg = BitmapFactory.decodeResource(getResources(), R.drawable.bat);
-        timer1.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                invalidate();;
-            };
-        },0,20);
 
         HIT = MediaPlayer.create(context, R.raw.hit);
         MISS = MediaPlayer.create(context, R.raw.miss);
@@ -76,6 +69,9 @@ public class DuringGame extends View {
         textPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
         textPaint.setStyle(Paint.Style.STROKE);
         healthBarPaint.setColor(Color.GREEN);
+        borderPaint.setStrokeWidth(10);
+        borderPaint.setColor(Color.parseColor("#FFD770"));
+        borderPaint.setStyle(Paint.Style.STROKE);
 
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -111,13 +107,10 @@ public class DuringGame extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLACK);
-        borderPaint.setStrokeWidth(10);
-        borderPaint.setColor(Color.parseColor("#FFD770"));
-        borderPaint.setStyle(Paint.Style.STROKE);
         canvas.drawRect(0,dHeight/7 + 2,dWidth, dHeight,borderPaint);
-
         xCordBall = xCordBall + xVel;
         yCordBall = yCordBall + yVel;
+
         if(( xCordBall <= 0 || xCordBall >= dWidth - ball.getWidth())){
             xVel = -xVel;
             if(WALL != null && audioState){
@@ -145,7 +138,7 @@ public class DuringGame extends View {
             }
             if (life < 3 && life > 0) {
                 canvas.drawColor(Color.RED, BlendMode.SRC_OVER);
-                timer2.schedule(new TimerTask() {
+                timer.schedule(new TimerTask() {
                     @RequiresApi(api = Build.VERSION_CODES.Q)
                     @Override
                     public void run() {
@@ -201,6 +194,8 @@ public class DuringGame extends View {
             healthBarPaint.setColor(Color.RED);
         }
         canvas.drawRect(0, 200f,life*(dWidth/5), dHeight/7, healthBarPaint);
+        invalidate();
+
     }
 
     @Override

@@ -140,7 +140,7 @@ android:background="@drawable/app_background_stars">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" + On and off sound by pressing on the audio icon. \n + Enter the game by choosing difficulty level. \n + Control the bat with touch motion below it. \n + You got 5 lives and bar at the top right indicate the current remaining. \n + Press exit icon to exit. \n + Press restart icon to restart the game."
+            android:text=" + On and off sound by pressing on the audio icon. \n + Enter the game by choosing difficulty level. \n + Control the bat with touch motion below it. \n + You got 5 lives and bar at the top right indicate the current remaining. \n + Your score is diplayed on top of screen. \n + Press exit icon to exit. \n + Press restart icon to restart the game."
             android:textSize="16dp" />
 
     </LinearLayout>
